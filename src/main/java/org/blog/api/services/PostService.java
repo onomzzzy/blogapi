@@ -7,14 +7,18 @@ import java.util.NoSuchElementException;
 import org.blog.api.model.Post;
 import org.blog.api.repositories.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
+@CacheConfig(cacheNames = {"post"})
 public class PostService {
 	
 	@Autowired
 	PostRepository pRepo;
 	
+	@Cacheable
 	public List<Post> getPosts(){
 		return this.pRepo.findAll();
 	}
