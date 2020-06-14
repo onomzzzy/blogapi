@@ -17,9 +17,9 @@ target/
 .idea
 *.iws
 *.iml
-*.ipr
+*.ipr ### application.properties ###  application.properties       
 
-### NetBeans ### application.properties ###
+### NetBeans ###
 /nbproject/private/
 /nbbuild/
 /dist/
